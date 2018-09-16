@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "houston-data-visuallizor", "houston-data-visuallizor\houston-data-visuallizor.csproj", "{AACAFDF3-CD44-4B8F-BE6B-F560A86A5BFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AACAFDF3-CD44-4B8F-BE6B-F560A86A5BFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AACAFDF3-CD44-4B8F-BE6B-F560A86A5BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AACAFDF3-CD44-4B8F-BE6B-F560A86A5BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AACAFDF3-CD44-4B8F-BE6B-F560A86A5BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C7F8FA8-7F5B-4EF0-B2D0-FA00571C6223}
+	EndGlobalSection
+EndGlobal
