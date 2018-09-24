@@ -23,7 +23,7 @@
 
         <div class="container" style="background-color: cornflowerblue">
             <div class="col-md-12">
-                <h1 class="text-center" id="toolName">Houston Data Visualizer
+                <h1 class="text-center" id="toolName">The Houston Data Visualizer
                     <img class="pull-right" src="../Data%20Divers%20Logo.PNG" height="150" width="150" />
                 </h1>
                 <div id="teamBlock">
