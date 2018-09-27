@@ -278,6 +278,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\mascot.ico" />
+    <Content Include="Images\RuneScape_Worldmap.png" />
     <Content Include="mascot.ico" />
     <Content Include="Scripts\app\_run.js" />
     <Content Include="Scripts\app\app.datamodel.js" />

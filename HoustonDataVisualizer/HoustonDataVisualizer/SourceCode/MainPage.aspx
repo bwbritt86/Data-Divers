@@ -92,8 +92,15 @@
                 </div>
             </div>
         </div>
+        <br /><br />
 
-
+        <div class="container">
+            <div class="row">
+                <div id="meatOfThePage" class="col-md-12">
+                    <img class="pull-right" src="../Data%20Divers%20Logo.PNG" height="150" width="150" />
+                </div>
+            </div>
+        </div>
 
 
     </form>
