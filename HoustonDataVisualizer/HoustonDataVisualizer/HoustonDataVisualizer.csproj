@@ -277,6 +277,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\BackgroundBanner.jpg" />
     <Content Include="Images\mascot.ico" />
     <Content Include="Images\RuneScape_Worldmap.png" />
     <Content Include="mascot.ico" />

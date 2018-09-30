@@ -1,7 +1,19 @@
 ﻿body {
     background-color: #b5dfe6;
 }
+#biggestTitle {
+    color: white;
+    text-shadow: 2px 2px #ff0000;
+}
 
 #dropDownBar {
 
+}
+
+#bannerForBG{
+    background-image:url("../Images/BackgroundBanner.jpg")
+}
+
+#dDLogo {
+    border-radius: 8px;
 }
