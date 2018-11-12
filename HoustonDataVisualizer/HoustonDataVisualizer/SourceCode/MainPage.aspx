@@ -5,31 +5,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!--https://bootswatch.com/yeti/-->
 
-
 <head runat="server">
+    <meta name="viewport" content="initial-scale=1.0" />
+    <meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="icon" type="image/ico" href="../images/mascot.ico" />
     <link rel="stylesheet" type="text/css" href="StyleSheet1.css" />
     <title>Houston Data Visualizer</title>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
-
-
-
 <body>
     <form id="form1" runat="server">
-        <hr />
-
         <div id="bannerForBG" class="container" style="background-color: cornflowerblue">
             <div class="col-md-12">
-                <h1 class="text-center" id="toolName" style="color:white;text-shadow: 2px 2px black;">The Houston Data Visualizer
+                <h1 class="text-center" id="toolName" style="color: white; text-shadow: 2px 2px black;">The Houston Data Visualizer
                     <img id="dDLogo" class="pull-right" src="../Data%20Divers%20Logo.PNG" height="150" width="150" />
                 </h1>
                 <div id="teamBlock">
-                    <h3 style="color:white;text-shadow: 2px 2px black;">Provided by the Data Divers UHCL Team</h3>
-                    <small  style="color:white;text-shadow: 2px 2px black;">--Data for Houston, By Houston--</small><br /><br /><br /><br />
+                    <h3 style="color: white; text-shadow: 2px 2px black;">Provided by the Data Divers UHCL Team</h3>
+                    <small style="color: white; text-shadow: 2px 2px black;">--Data for Houston, By Houston--</small><br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
@@ -43,8 +42,6 @@
                     <div class="dropdown col-md-4">
                     </div>
 
-
-
                     <div class="dropdown col-md-4">
                     </div>
                 </div>
@@ -57,23 +54,17 @@
             <div class="row">
                 <div id="meatOfThePage" class="col-md-12">
                     <div class="jumbotron">
-                        <h1 class="display-3">Houston Map</h1>
+                        <h2 class="display-3">Houston Map</h2>
                         <p class="lead">Here you can see the offenses in Houston by selecting from above and clicking submit!</p>
                         <hr class="my-4" />
                         <p>
-                        Year:
+                            Year:
                         <asp:DropDownList ID="DropDownList1" runat="server">
-                            <asp:ListItem>2009</asp:ListItem>
-                            <asp:ListItem>2010</asp:ListItem>
-                            <asp:ListItem>2011</asp:ListItem>
-                            <asp:ListItem>2012</asp:ListItem>
-                            <asp:ListItem>2013</asp:ListItem>
-                            <asp:ListItem>2014</asp:ListItem>
-                            <asp:ListItem>2015</asp:ListItem>
+
                             <asp:ListItem>2016</asp:ListItem>
                             <asp:ListItem>2017</asp:ListItem>
                         </asp:DropDownList>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         Month:
                         <asp:DropDownList ID="DropDownList2" runat="server">
                             <asp:ListItem>January</asp:ListItem>
@@ -89,7 +80,7 @@
                             <asp:ListItem>November</asp:ListItem>
                             <asp:ListItem>December</asp:ListItem>
                         </asp:DropDownList>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         Offense Type:
                         <asp:DropDownList ID="DropDownList3" runat="server">
                             <asp:ListItem>Aggravated Theft</asp:ListItem>
@@ -100,17 +91,40 @@
                             <asp:ListItem>Robbery</asp:ListItem>
                             <asp:ListItem>Theft</asp:ListItem>
                         </asp:DropDownList>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Button class="btn btn-primary" ID="Button1" runat="server" Text="Submit" />
                         </p>
                         <p class="lead">
-                            &nbsp;</p>
+                            &nbsp;
+                        </p>
+                        <div id="map"></div>
+                        <script>
+                            var map;
+                            function initMap() {
+                                map = new google.maps.Map(document.getElementById('map'), {
+                                    center: { lat: 29.7604, lng: -95.3698 },
+                                    zoom: 10
+                                });
+                            }
+                            var body = document.body, html = document.documentElement;
+                            var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+                            document.getElementById('map').style.height = height + 'px';
+                        </script>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7hJnDLt7rMnypi0vkufSe0paNHRdfwjE&callback=initMap"
+                            async="async" defer="defer">
+                        </script>
+                        <!--Auto scroll on page submit to the map div-->
                     </div>
                 </div>
             </div>
         </div>
-
-
     </form>
 </body>
 </html>
+<!--SOURCES:
+https://salesforce.stackexchange.com/questions/83335/google-maps-not-rendering-with-100-height
+
+
+
+
+-->
