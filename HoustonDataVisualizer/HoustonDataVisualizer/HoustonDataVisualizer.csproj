@@ -57,6 +57,9 @@
       <Private>True</Private>
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="GoogleMaps, Version=7.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleMapControl.DEV.7.4.2\lib\net40\GoogleMaps.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -263,6 +266,13 @@
     <Compile Include="SourceCode\MainPage.aspx.designer.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SourceCode\Megatron2000.aspx.cs">
+      <DependentUpon>Megatron2000.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SourceCode\Megatron2000.aspx.designer.cs">
+      <DependentUpon>Megatron2000.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -324,6 +334,7 @@
     <Content Include="Scripts\sammy-0.7.5.min.js" />
     <Content Include="SourceCode\MainPage.aspx" />
     <Content Include="SourceCode\StyleSheet1.css" />
+    <Content Include="SourceCode\Megatron2000.aspx" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
