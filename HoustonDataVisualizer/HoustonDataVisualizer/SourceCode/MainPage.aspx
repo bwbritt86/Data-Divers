@@ -18,6 +18,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <div id="bannerForBG" class="container" style="background-color: cornflowerblue">
             <div class="col-md-12">
                 <h1 class="text-center" id="toolName" style="color: white; text-shadow: 2px 2px black;">The Houston Data Visualizer
@@ -58,15 +59,16 @@
                         <p class="lead">Here you can see the offenses in Houston by selecting from above and clicking submit!</p>
                         <hr class="my-4" />
                         <p>
-                            Year:
+                  
                         <asp:DropDownList ID="DropDownList1" runat="server">
-
+                            <asp:ListItem>Year</asp:ListItem>
                             <asp:ListItem>2016</asp:ListItem>
                             <asp:ListItem>2017</asp:ListItem>
                         </asp:DropDownList>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Month:
+                        
                         <asp:DropDownList ID="DropDownList2" runat="server">
+                            <asp:ListItem>Month</asp:ListItem>
                             <asp:ListItem>January</asp:ListItem>
                             <asp:ListItem>February</asp:ListItem>
                             <asp:ListItem>March</asp:ListItem>
@@ -81,10 +83,11 @@
                             <asp:ListItem>December</asp:ListItem>
                         </asp:DropDownList>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        Offense Type:
+                        
                         <asp:DropDownList ID="DropDownList3" runat="server">
-                            <asp:ListItem>Aggravated Theft</asp:ListItem>
-                            <asp:ListItem>Automobile Theft</asp:ListItem>
+                            <asp:ListItem>Offense</asp:ListItem>
+                            <asp:ListItem>AggravatedAssault</asp:ListItem>
+                            <asp:ListItem>AutoTheft</asp:ListItem>
                             <asp:ListItem>Burglary</asp:ListItem>
                             <asp:ListItem>Murder</asp:ListItem>
                             <asp:ListItem>Rape</asp:ListItem>
@@ -94,7 +97,7 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <asp:Button class="btn btn-primary" ID="Button1" runat="server" Text="Submit" />
                         </p>
-                        <p class="lead">
+                        <!--<p class="lead">
                             &nbsp;
                         </p>
                         <div id="map"></div>
@@ -109,10 +112,16 @@
                             var body = document.body, html = document.documentElement;
                             var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
                             document.getElementById('map').style.height = height + 'px';
-                        </script>
-                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7hJnDLt7rMnypi0vkufSe0paNHRdfwjE&callback=initMap"
-                            async="async" defer="defer">
-                        </script>
+                        </script>-->
+                        
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7hJnDLt7rMnypi0vkufSe0paNHRdfwjE&amp;libraries=visualization" type="text/javascript"></script>
+                        <div class="map-wrap">
+                            <map:GoogleMap ID="GoogleMap1" runat="server" CssClass="map" Latitude="29.7604" Longitude="-95.3698" Zoom="10"
+                                Width="100%" Height="600px" FullscreenControl="true">
+                            </map:GoogleMap>
+                        </div>
+                        <map:HeatmapLayer ID="Heatmap1" runat="server" TargetControlID="GoogleMap1">
+                        </map:HeatmapLayer>
                         <!--Auto scroll on page submit to the map div-->
                     </div>
                 </div>

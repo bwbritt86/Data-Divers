@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\HoustonDataVisualizer",
+    "\\HoustonDataVisualizer\\HoustonDataVisualizer",
+    "\\HoustonDataVisualizer\\HoustonDataVisualizer\\SourceCode"
   ],
+  "SelectedNode": "\\HoustonDataVisualizer\\HoustonDataVisualizer\\SourceCode\\MainPage.aspx",
   "PreviewInSolutionExplorer": false
 }
