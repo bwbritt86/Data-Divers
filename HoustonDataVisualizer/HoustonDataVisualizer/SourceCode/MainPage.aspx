@@ -34,21 +34,7 @@
             </div>
         </div>
 
-        <div class="col-md-12" id="dropDownBar">
-            <div class="container">
-                <div class="row">
-                    <div class="dropdown col-md-4">
-                    </div>
 
-                    <div class="dropdown col-md-4">
-                    </div>
-
-                    <div class="dropdown col-md-4">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br />
         <br />
 
         <div class="container">
@@ -61,19 +47,19 @@
                         <textarea class="form-control col-md-1" rows="1" id="addressMap">--Leave blank for general view of map--</textarea>
                         <hr />
 
-                        <p class="lead">Here you can see the offenses in Houston by selecting from above and clicking submit!</p>
+                        <p class="lead">Here you can see the offenses in Houston by selecting from the options below and clicking  the 'Submit!' button.</p>
                         <hr class="my-4" />
                         <p>
                   
                         <asp:DropDownList ID="DropDownList1" runat="server">
-                            <asp:ListItem>Year</asp:ListItem>
+                            <asp:ListItem>Year:</asp:ListItem>
                             <asp:ListItem>2016</asp:ListItem>
                             <asp:ListItem>2017</asp:ListItem>
                         </asp:DropDownList>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         
                         <asp:DropDownList ID="DropDownList2" runat="server">
-                            <asp:ListItem>Month</asp:ListItem>
+                            <asp:ListItem>Month:</asp:ListItem>
                             <asp:ListItem>January</asp:ListItem>
                             <asp:ListItem>February</asp:ListItem>
                             <asp:ListItem>March</asp:ListItem>
@@ -90,7 +76,7 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         
                         <asp:DropDownList ID="DropDownList3" runat="server">
-                            <asp:ListItem>Offense</asp:ListItem>
+                            <asp:ListItem>Offense Type:</asp:ListItem>
                             <asp:ListItem>AggravatedAssault</asp:ListItem>
                             <asp:ListItem>AutoTheft</asp:ListItem>
                             <asp:ListItem>Burglary</asp:ListItem>
@@ -100,7 +86,7 @@
                             <asp:ListItem>Theft</asp:ListItem>
                         </asp:DropDownList>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <asp:Button class="btn btn-primary" ID="Button1" runat="server" Text="Submit" />
+                            <asp:Button class="btn btn-success pull-right" ID="Button1" runat="server" Text="Submit!" />
                         </p>
                         <!--<p class="lead">
                             &nbsp;
