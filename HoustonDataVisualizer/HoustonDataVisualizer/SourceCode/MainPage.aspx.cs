@@ -4,8 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Newtonsoft.Json;
+using System.Net;
+using Newtonsoft.Json.Linq;
+using System.Net.Http;
 using GoogleMaps.Samples.Data.Sources;
-using System.Reflection;
+
 
 namespace HoustonDataVisualizer.SourceCode
 {
@@ -16,7 +20,7 @@ namespace HoustonDataVisualizer.SourceCode
             if (IsPostBack)
             {
                 //Use if-else statement to select heatmap object based on DropDownList selections
-                
+
                 //2016 
                 if (DropDownList1.Text.ToString() == "2016" && DropDownList2.Text.ToString() == "January" && DropDownList3.Text.ToString() == "Theft")
                     Heatmap1.AddRange(January_2016_Theft.GetRawData());
@@ -356,8 +360,48 @@ namespace HoustonDataVisualizer.SourceCode
                     Heatmap1.AddRange(December_2017_Murder.GetRawData());
                 else if (DropDownList1.Text.ToString() == "2017" && DropDownList2.Text.ToString() == "December" && DropDownList3.Text.ToString() == "Rape")
                     Heatmap1.AddRange(December_2017_Rape.GetRawData());
+
+                String[] latLong = new String[2];
+                String address = "2700+Bay+Area+Blvd+Houston+TX";
+                latLong = osmGeocoder(address);
+
+                GoogleMap1.Latitude = Convert.ToDouble(latLong[0]);
+                GoogleMap1.Longitude = Convert.ToDouble(latLong[1]);
+                GoogleMap1.Zoom = 16;
             }
 
+        }
+
+        static String[] osmGeocoder(string address)
+        {
+            String[] latLong = new string[2];
+
+            //Insert account email for openstreetmap URL
+            string email = "bwbritt86@gmail.com";
+
+            //Create openstreetmap URL with parameters
+            String url = "https://nominatim.openstreetmap.org/search?q=" + address + "&format=json&polygon=1&email=" + email + "&addressdetails=1";
+
+            using (var w = new WebClient())
+            {
+                try
+                {
+                    //Retrieve address information as JSON file
+                    var json_data = w.DownloadString(url);
+
+                    //Retrieve latitude and longitude from JSON string
+                    var r = (JArray)JsonConvert.DeserializeObject(json_data);
+
+                    latLong[0] = ((JValue)r[0]["lat"]).Value as string;
+                    latLong[1] = ((JValue)r[0]["lon"]).Value as string;
+                }
+                catch (Exception ex)
+                {
+                    latLong[0] = "";
+                    latLong[1] = "";
+                }
+            }
+            return latLong;
         }
     }
 }
