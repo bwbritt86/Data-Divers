@@ -56,6 +56,11 @@
                 <div id="meatOfThePage" class="col-md-12">
                     <div class="jumbotron">
                         <h2 class="display-3">Houston Map</h2>
+
+                        <label for="addressMap">Address:</label>
+                        <textarea class="form-control col-md-1" rows="1" id="addressMap">--Leave blank for general view of map--</textarea>
+                        <hr />
+
                         <p class="lead">Here you can see the offenses in Houston by selecting from above and clicking submit!</p>
                         <hr class="my-4" />
                         <p>
