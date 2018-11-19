@@ -44,7 +44,7 @@
                         <h2 class="display-3">Houston Map</h2>
 
                         <label for="addressMap">Address:</label>
-                        <asp:textbox runat="server" readOnly="false" class="form-control col-md-1" rows="1" id="addressMap">--Leave blank for general view of map--</asp:textbox>
+                        <asp:textbox runat="server" readOnly="false" class="form-control col-md-1" rows="1" id="addressMap" placeholder="--Leave blank for general view of map--"></asp:textbox>
                         <hr />
 
                         <p class="lead">Here you can see the offenses in Houston by selecting from the options below and clicking  the 'Submit!' button.</p>

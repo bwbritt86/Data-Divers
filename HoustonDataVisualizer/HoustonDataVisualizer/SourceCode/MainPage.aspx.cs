@@ -361,13 +361,33 @@ namespace HoustonDataVisualizer.SourceCode
                 else if (DropDownList1.Text.ToString() == "2017" && DropDownList2.Text.ToString() == "December" && DropDownList3.Text.ToString() == "Rape")
                     Heatmap1.AddRange(December_2017_Rape.GetRawData());
 
-                String[] latLong = new String[2];
-                String address = "2700+Bay+Area+Blvd+Houston+TX";
-                latLong = osmGeocoder(address);
+                //Get address string from frontend
+                if (addressMap.Text.ToString() != "")
+                {
+                    try
+                    {
+                        String[] latLong = new String[2];
+                        String address = addressMap.Text.ToString();
 
-                GoogleMap1.Latitude = Convert.ToDouble(latLong[0]);
-                GoogleMap1.Longitude = Convert.ToDouble(latLong[1]);
-                GoogleMap1.Zoom = 16;
+                        //Remove frivolous characters from address
+                        address = address.Replace(",", "");
+                        address = address.Replace(" ", "+");
+                        address = address.Replace(".", "");
+                        
+                        //send to geocoder
+                        latLong = osmGeocoder(address);
+
+                        //Send coordinates to frontend
+                        GoogleMap1.Latitude = Convert.ToDouble(latLong[0]);
+                        GoogleMap1.Longitude = Convert.ToDouble(latLong[1]);
+                        GoogleMap1.Zoom = 16;
+                    }
+                    catch (Exception ex)
+                    {
+                        //Give alert box if the address is not found
+                        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('This address does not exist in OpenStreetMaps.')", true);
+                    }
+                }
             }
 
         }
